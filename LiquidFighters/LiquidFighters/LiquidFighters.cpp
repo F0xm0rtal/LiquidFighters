@@ -7,8 +7,10 @@
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(840, 420), "LiquidFihters");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
+
+//	sf::Music music;
+//	if (!music.openFromFile("nice_music.ogg"))
+//		return EXIT_FAILURE;
 
 	while (window.isOpen())
 	{
@@ -24,6 +26,6 @@ int main()
 		window.display();
 	}
 
-    return 0;
+    return EXIT_SUCCESS;
 }
 
