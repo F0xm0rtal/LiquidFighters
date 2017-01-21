@@ -16,7 +16,7 @@ class Player
 public:
 	Player(int ID, sf::Sprite *_sprite) {
 		this->ID = ID;
-		this->life = 100;
+		this->life = 4;
 		this->posX = 50 * ID;
 		this->posY = 600;
 		sprite = _sprite;

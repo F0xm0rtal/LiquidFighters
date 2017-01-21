@@ -1,7 +1,13 @@
-﻿  LiquidFighters.cpp
-g:\liquidfighters\liquidfighters\liquidfighters\player.hpp(23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-g:\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(16): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-g:\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(17): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-g:\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(108): warning C4018: '<': signed/unsigned mismatch
-  LiquidFighters.vcxproj -> G:\LiquidFighters\LiquidFighters\Debug\LiquidFighters.exe
-  LiquidFighters.vcxproj -> G:\LiquidFighters\LiquidFighters\Debug\LiquidFighters.pdb (Full PDB)
+﻿  Player.cpp
+c:\users\guillaume\desktop\liquidfighters\liquidfighters\liquidfighters\player.hpp(23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\guillaume\desktop\liquidfighters\liquidfighters\liquidfighters\player.cpp(21): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+  Compiling...
+  LiquidFighters.cpp
+c:\users\guillaume\desktop\liquidfighters\liquidfighters\liquidfighters\player.hpp(23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\guillaume\desktop\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(16): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\guillaume\desktop\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(17): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\guillaume\desktop\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(108): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  LiquidFighters.vcxproj -> C:\Users\guillaume\Desktop\LiquidFighters\LiquidFighters\Debug\LiquidFighters.exe
+  LiquidFighters.vcxproj -> C:\Users\guillaume\Desktop\LiquidFighters\LiquidFighters\Debug\LiquidFighters.pdb (Full PDB)
