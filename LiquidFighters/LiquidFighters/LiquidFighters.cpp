@@ -3,11 +3,15 @@
 
 #include "stdafx.h"
 #include <SFML/Graphics.hpp>
+<<<<<<< HEAD
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Clock.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Window/Event.hpp>
 #include <iostream>
+=======
+#include "Player.hpp"
+>>>>>>> 35c7e561b7d821a7bd83fbadec9be52652a506e8
 
 sf::RectangleShape createRect(int x, int y, int sx, int sy, sf::Texture texture)
 {
@@ -52,10 +56,14 @@ int main()
 				window.close();
 		}
 
+<<<<<<< HEAD
 		window.clear(sf::Color(200, 200, 200));
 		i = 0;
 		while (i < plateform.size())
 			window.draw(plateform[i++]);
+=======
+		window.clear();
+>>>>>>> 35c7e561b7d821a7bd83fbadec9be52652a506e8
 		window.display();
 	}
 

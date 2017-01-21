@@ -1,6 +1,11 @@
 ﻿  LiquidFighters.cpp
+<<<<<<< HEAD
 g:\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(14): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 g:\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(15): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 g:\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(57): warning C4018: '<': signed/unsigned mismatch
   LiquidFighters.vcxproj -> G:\LiquidFighters\LiquidFighters\Debug\LiquidFighters.exe
   LiquidFighters.vcxproj -> G:\LiquidFighters\LiquidFighters\Debug\LiquidFighters.pdb (Full PDB)
+=======
+  LiquidFighters.vcxproj -> C:\Users\Vixen\Documents\LiquidFighters\LiquidFighters\Debug\LiquidFighters.exe
+  LiquidFighters.vcxproj -> C:\Users\Vixen\Documents\LiquidFighters\LiquidFighters\Debug\LiquidFighters.pdb (Full PDB)
+>>>>>>> 35c7e561b7d821a7bd83fbadec9be52652a506e8
