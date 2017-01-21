@@ -3,32 +3,38 @@
 #ifndef PLAYER_HPP
 # define PALYER_HPP
 
-# include <iostream>
+#include <iostream>
+#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/System/Clock.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/Window/Event.hpp>
+#include "key.h"
 
 class Player
 {
 public:
-	Player(int ID);
-	~Player();
+	Player(int ID, sf::Sprite *_sprite) {
+		this->ID = ID;
+		this->life = 100;
+		this->posX = 50 * ID;
+		this->posY = 600;
+		sprite = _sprite;
+		sprite->setPosition(posX, posY);
+	}
+	~Player() {
+	}
+	sf::Sprite *getSprite() {
+		return sprite;
+	}
+	void update(Key key);
 	int posX;
 	int posY;
 	int life;
 	int ID;
+	sf::Sprite *sprite;
 private:
 
 };
-
-Player::Player(int ID)
-{
-	this->ID = ID;
-	this->life = 100;
-	this->posX = 50 * ID;
-	this->posY = 10;
-}
-
-Player::~Player()
-{
-	std::cout << "AAAARRRGH!!!" << std::endl;
-}
 
 #endif // !PLAYER_HPP
