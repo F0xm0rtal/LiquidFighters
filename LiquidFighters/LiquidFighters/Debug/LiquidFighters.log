@@ -1,3 +1,6 @@
-﻿  stdafx.cpp
-  LiquidFighters.cpp
-c:\users\vixen\documents\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(25): error C2065: 'shape' : identificateur non déclaré
+﻿  LiquidFighters.cpp
+g:\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(14): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(15): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(57): warning C4018: '<': signed/unsigned mismatch
+  LiquidFighters.vcxproj -> G:\LiquidFighters\LiquidFighters\Debug\LiquidFighters.exe
+  LiquidFighters.vcxproj -> G:\LiquidFighters\LiquidFighters\Debug\LiquidFighters.pdb (Full PDB)
