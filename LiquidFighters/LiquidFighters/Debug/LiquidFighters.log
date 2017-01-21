@@ -1,3 +1,3 @@
-﻿  stdafx.cpp
-  LiquidFighters.cpp
-c:\users\vixen\documents\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(25): error C2065: 'shape' : identificateur non déclaré
+﻿  LiquidFighters.cpp
+  LiquidFighters.vcxproj -> C:\Users\Vixen\Documents\LiquidFighters\LiquidFighters\Debug\LiquidFighters.exe
+  LiquidFighters.vcxproj -> C:\Users\Vixen\Documents\LiquidFighters\LiquidFighters\Debug\LiquidFighters.pdb (Full PDB)

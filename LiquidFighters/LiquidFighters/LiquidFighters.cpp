@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include <SFML/Graphics.hpp>
+#include "Player.hpp"
 
 int main()
 {
@@ -22,7 +23,6 @@ int main()
 		}
 
 		window.clear();
-		window.draw(shape);
 		window.display();
 	}
 
