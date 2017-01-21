@@ -23,17 +23,23 @@ int main()
 	int i;
 	sf::Texture brick;
 	sf::Texture wall;
+	sf::Texture tPlayer1;
+	sf::Texture tPlayer2;
 	sf::Sprite bg;
 	sf::Sprite s1;
 	sf::Sprite s2;
 	sf::Event event;
 	Key key;
-	if (!brick.loadFromFile("C:\\brick.png"))
+	if (!brick.loadFromFile("./ressources/textures/brick.png"))
 		std::cout << "non" << std::endl;
-	if (!wall.loadFromFile("C:\\wall.png"))
+	if (!wall.loadFromFile("./ressources/textures/wall.png"))
 		std::cout << "non" << std::endl;
-	s2.setTexture(brick);
-	s1.setTexture(brick);
+	if (!tPlayer1.loadFromFile("./ressources/textures/player1.png"))
+		std::cout << "non" << std::endl;
+	if (!tPlayer2.loadFromFile("./ressources/textures/player2.png"))
+		std::cout << "non" << std::endl;
+	s1.setTexture(tPlayer1);
+	s2.setTexture(tPlayer2);
 	Player player1(1, &s1);
 	Player player2(2, &s2);
 	bg.setTexture(wall);
