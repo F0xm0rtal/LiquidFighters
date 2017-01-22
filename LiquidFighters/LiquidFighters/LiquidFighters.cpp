@@ -1,6 +1,5 @@
 // LiquidFighters.cpp : définit le point d'entrée pour l'application console.
 //
-
 #include "stdafx.h"
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
@@ -11,6 +10,9 @@
 #include "Player.hpp"
 #include "Bullet.hpp"
 #include "key.h"
+#define _WIN32_WINNT 0x0500 
+#include <windows.h> 
+#include <iostream> 
 
 sf::RectangleShape createRect(int x, int y, int sx, int sy)
 {
@@ -27,9 +29,10 @@ void restart(Player *player1, Player *player2)
 
 int main()
 {
+	HWND hWnd = GetConsoleWindow();
+	ShowWindow(hWnd, HIDE_WINDOW);
 	int i;
 	sf::Clock deltaClock;
-	sf::Texture brick;
 	sf::Texture wall;
 	sf::Texture tPlayer1;
 	sf::Texture tPlayer2;
@@ -48,8 +51,6 @@ int main()
 	sf::Event event;
 	Key key;
 	Bullet *bullet = new Bullet();
-	if (!brick.loadFromFile("./ressources/textures/brick.png"))
-		std::cout << "non" << std::endl;
 	if (!wall.loadFromFile("./ressources/textures/wall.png"))
 		std::cout << "non" << std::endl;
 	if (!tPlayer1.loadFromFile("./ressources/textures/player1.png"))

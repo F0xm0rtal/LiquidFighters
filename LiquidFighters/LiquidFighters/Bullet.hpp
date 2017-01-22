@@ -75,9 +75,9 @@ public:
 		if ((_id == 1 && t1 > 0) || (_id == 2 && t2 > 0))
 			return;
 		else if (_id == 1)
-			t1 = 5;
+			t1 = 2;
 		else
-			t2 = 5;
+			t2 = 2;
 		Ball ball;
 		ball.id = player.ID;
 		ball.view = player.view;

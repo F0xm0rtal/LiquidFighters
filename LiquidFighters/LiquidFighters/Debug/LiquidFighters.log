@@ -2,8 +2,10 @@
 g:\liquidfighters\liquidfighters\liquidfighters\bullet.hpp(40): warning C4018: '<': signed/unsigned mismatch
 g:\liquidfighters\liquidfighters\liquidfighters\bullet.hpp(65): warning C4018: '<': signed/unsigned mismatch
 g:\liquidfighters\liquidfighters\liquidfighters\bullet.hpp(101): warning C4018: '<': signed/unsigned mismatch
-g:\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(17): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-g:\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(18): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-g:\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(203): warning C4018: '<': signed/unsigned mismatch
+g:\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(13): warning C4005: '_WIN32_WINNT': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\shared\sdkddkver.h(200): note: see previous definition of '_WIN32_WINNT'
+g:\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(19): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(20): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(204): warning C4018: '<': signed/unsigned mismatch
   LiquidFighters.vcxproj -> G:\LiquidFighters\LiquidFighters\Debug\LiquidFighters.exe
   LiquidFighters.vcxproj -> G:\LiquidFighters\LiquidFighters\Debug\LiquidFighters.pdb (Full PDB)
