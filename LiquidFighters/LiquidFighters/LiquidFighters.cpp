@@ -13,6 +13,7 @@
 #define _WIN32_WINNT 0x0500 
 #include <windows.h> 
 #include <iostream> 
+#include <SFML/Audio.hpp>
 
 sf::RectangleShape createRect(int x, int y, int sx, int sy)
 {
@@ -29,6 +30,7 @@ void restart(Player *player1, Player *player2)
 
 int main()
 {
+	sf::SoundBuffer buffer;
 	HWND hWnd = GetConsoleWindow();
 	ShowWindow(hWnd, HIDE_WINDOW);
 	int i;
