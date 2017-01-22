@@ -38,11 +38,13 @@ int main()
 	sf::Texture end1;
 	sf::Texture end2;
 	sf::Texture cmd;
+	sf::Texture tstart;
 	sf::Sprite bg;
 	sf::Sprite sEnd;
 	sf::Sprite s1;
 	sf::Sprite s2;
 	sf::Sprite scmd;
+	sf::Sprite sStart;
 	sf::Event event;
 	Key key;
 	Bullet *bullet = new Bullet();
@@ -64,7 +66,10 @@ int main()
 		std::cout << "non" << std::endl;
 	if (!cmd.loadFromFile("./ressources/textures/cmd.png"))
 		std::cout << "non" << std::endl;
+	if (!tstart.loadFromFile("./ressources/textures/start.png"))
+		std::cout << "non" << std::endl;
 	scmd.setTexture(cmd);
+	sStart.setTexture(tstart);
 	s1.setTexture(tPlayer1);
 	s2.setTexture(tPlayer2);
 	s2.scale(-1, 1);
@@ -99,6 +104,7 @@ int main()
 	key.keyright1 = false;
 	key.keyright2 = false;
 	bool end = false;
+	bool start = true;
 	while (window.isOpen())
 	{
 		sf::Time dt = deltaClock.restart();
@@ -114,7 +120,7 @@ int main()
 			{
 				if (event.key.code == sf::Keyboard::Escape)
 					return 1;
-				if (!end)
+				if (!end && !start)
 				{
 					if (event.key.code == sf::Keyboard::Z)
 						key.keyup1 = true;
@@ -141,17 +147,21 @@ int main()
 					if (event.key.code == sf::Keyboard::RControl)
 						key.keyfire2 = true;
 				}
-				else if (event.key.code == sf::Keyboard::R)
+				else if (event.key.code == sf::Keyboard::R && !start)
 				{
 					player1.relife();
 					player2.relife();
 					bullet->del();
 					end = false;
 				}
+				else if (event.key.code == sf::Keyboard::R && start)
+				{
+					start = false;
+				}
 			}
 			if (event.type == sf::Event::KeyReleased)
 			{
-				if (!end)
+				if (!end && !start)
 				{
 					if (event.key.code == sf::Keyboard::Z)
 						key.keyup1 = false;
@@ -198,6 +208,8 @@ int main()
 		window.draw(scmd);
 		if (end)
 			window.draw(sEnd);
+		if (start)
+			window.draw(sStart);
 		window.display();
 	}
 

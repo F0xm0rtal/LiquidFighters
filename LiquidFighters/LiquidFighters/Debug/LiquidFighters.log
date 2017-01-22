@@ -4,6 +4,6 @@ g:\liquidfighters\liquidfighters\liquidfighters\bullet.hpp(65): warning C4018: '
 g:\liquidfighters\liquidfighters\liquidfighters\bullet.hpp(101): warning C4018: '<': signed/unsigned mismatch
 g:\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(17): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 g:\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(18): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-g:\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(193): warning C4018: '<': signed/unsigned mismatch
+g:\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(203): warning C4018: '<': signed/unsigned mismatch
   LiquidFighters.vcxproj -> G:\LiquidFighters\LiquidFighters\Debug\LiquidFighters.exe
   LiquidFighters.vcxproj -> G:\LiquidFighters\LiquidFighters\Debug\LiquidFighters.pdb (Full PDB)
