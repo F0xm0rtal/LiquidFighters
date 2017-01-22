@@ -148,6 +148,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bullet.hpp" />
     <ClInclude Include="key.h" />
     <ClInclude Include="player.hpp" />
     <ClInclude Include="stdafx.h" />

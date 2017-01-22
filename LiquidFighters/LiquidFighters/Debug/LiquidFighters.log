@@ -1,7 +1,9 @@
 ﻿  LiquidFighters.cpp
-f:\jeux\liquidfighters\liquidfighters\liquidfighters\player.hpp(23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-f:\jeux\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(16): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-f:\jeux\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(17): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-f:\jeux\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(115): warning C4018: '<': signed/unsigned mismatch
-  LiquidFighters.vcxproj -> F:\Jeux\LiquidFighters\LiquidFighters\Debug\LiquidFighters.exe
-  LiquidFighters.vcxproj -> F:\Jeux\LiquidFighters\LiquidFighters\Debug\LiquidFighters.pdb (Full PDB)
+g:\liquidfighters\liquidfighters\liquidfighters\bullet.hpp(40): warning C4018: '<': signed/unsigned mismatch
+g:\liquidfighters\liquidfighters\liquidfighters\bullet.hpp(65): warning C4018: '<': signed/unsigned mismatch
+g:\liquidfighters\liquidfighters\liquidfighters\bullet.hpp(101): warning C4018: '<': signed/unsigned mismatch
+g:\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(17): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(18): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+g:\liquidfighters\liquidfighters\liquidfighters\liquidfighters.cpp(193): warning C4018: '<': signed/unsigned mismatch
+  LiquidFighters.vcxproj -> G:\LiquidFighters\LiquidFighters\Debug\LiquidFighters.exe
+  LiquidFighters.vcxproj -> G:\LiquidFighters\LiquidFighters\Debug\LiquidFighters.pdb (Full PDB)

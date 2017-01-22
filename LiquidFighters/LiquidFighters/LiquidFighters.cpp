@@ -9,6 +9,7 @@
 #include <SFML/Window/Event.hpp>
 #include <iostream>
 #include "Player.hpp"
+#include "Bullet.hpp"
 #include "key.h"
 
 sf::RectangleShape createRect(int x, int y, int sx, int sy)
@@ -18,18 +19,33 @@ sf::RectangleShape createRect(int x, int y, int sx, int sy)
 	return rect;
 }
 
+void restart(Player *player1, Player *player2)
+{
+	player1->relife();
+	player2->relife();
+}
+
 int main()
 {
 	int i;
+	sf::Clock deltaClock;
 	sf::Texture brick;
 	sf::Texture wall;
 	sf::Texture tPlayer1;
 	sf::Texture tPlayer2;
+	sf::Texture onde1;
+	sf::Texture onde2;
+	sf::Texture end1;
+	sf::Texture end2;
+	sf::Texture cmd;
 	sf::Sprite bg;
+	sf::Sprite sEnd;
 	sf::Sprite s1;
 	sf::Sprite s2;
+	sf::Sprite scmd;
 	sf::Event event;
 	Key key;
+	Bullet *bullet = new Bullet();
 	if (!brick.loadFromFile("./ressources/textures/brick.png"))
 		std::cout << "non" << std::endl;
 	if (!wall.loadFromFile("./ressources/textures/wall.png"))
@@ -38,8 +54,20 @@ int main()
 		std::cout << "non" << std::endl;
 	if (!tPlayer2.loadFromFile("./ressources/textures/player2.png"))
 		std::cout << "non" << std::endl;
+	if (!onde1.loadFromFile("./ressources/textures/onde1.png"))
+		std::cout << "non" << std::endl;
+	if (!onde2.loadFromFile("./ressources/textures/onde2.png"))
+		std::cout << "non" << std::endl;
+	if (!end1.loadFromFile("./ressources/textures/end1.png"))
+		std::cout << "non" << std::endl;
+	if (!end2.loadFromFile("./ressources/textures/end2.png"))
+		std::cout << "non" << std::endl;
+	if (!cmd.loadFromFile("./ressources/textures/cmd.png"))
+		std::cout << "non" << std::endl;
+	scmd.setTexture(cmd);
 	s1.setTexture(tPlayer1);
 	s2.setTexture(tPlayer2);
+	s2.scale(-1, 1);
 	Player player1(1, &s1);
 	Player player2(2, &s2);
 	bg.setTexture(wall);
@@ -58,18 +86,22 @@ int main()
 	plateform.push_back(createRect(437, 570, 150, 30));
 	plateform.push_back(createRect(0, 600, 150, 30));
 	plateform.push_back(createRect(874, 600, 150, 30));
-	plateform.push_back(createRect(0, 270, 150, 30));
-	plateform.push_back(createRect(874, 270, 150, 30));
+	plateform.push_back(createRect(0, 270, 100, 30));
+	plateform.push_back(createRect(924, 270, 100, 30));
+	std::cout << plateform[0].getGlobalBounds().intersects(s1.getGlobalBounds()) << std::endl;
+	window.setKeyRepeatEnabled(false);
+	key.keyup1 = false;
+	key.keyup1 = false;
+	key.keydown1 = false;
+	key.keydown2 = false;
+	key.keyleft1 = false;
+	key.keyleft2 = false;
+	key.keyright1 = false;
+	key.keyright2 = false;
+	bool end = false;
 	while (window.isOpen())
 	{
-		key.keyup1 = false;
-		key.keyup1 = false;
-		key.keydown1 = false;
-		key.keydown2 = false;
-		key.keyleft1 = false;
-		key.keyleft2 = false;
-		key.keyright1 = false;
-		key.keyright2 = false;
+		sf::Time dt = deltaClock.restart();
 		key.keyjump1 = false;
 		key.keyjump2 = false;
 		key.keyfire1 = false;
@@ -80,41 +112,92 @@ int main()
 				window.close();
 			if (event.type == sf::Event::KeyPressed)
 			{
-				if (event.key.code == sf::Keyboard::Z)
-					key.keyup1 = true;
-				if (event.key.code == sf::Keyboard::Up)
-					key.keyup1 = true;
-				if (event.key.code == sf::Keyboard::S)
-					key.keydown1 = true;
-				if (event.key.code == sf::Keyboard::Down)
-					key.keydown2 = true;
-				if (event.key.code == sf::Keyboard::Q)
-					key.keyleft1 = true;
-				if (event.key.code == sf::Keyboard::Left)
-					key.keyleft2 = true;
-				if (event.key.code == sf::Keyboard::D)
-					key.keyright1 = true;
-				if (event.key.code == sf::Keyboard::Right)
-					key.keyright2 = true;
-				if (event.key.code == sf::Keyboard::F)
-					key.keyjump1 = true;
-				if (event.key.code == sf::Keyboard::RAlt)
-					key.keyjump2 = true;
-				if (event.key.code == sf::Keyboard::G)
-					key.keyfire1 = true;
-				if (event.key.code == sf::Keyboard::RControl)
-					key.keyfire2 = true;
+				if (event.key.code == sf::Keyboard::Escape)
+					return 1;
+				if (!end)
+				{
+					if (event.key.code == sf::Keyboard::Z)
+						key.keyup1 = true;
+					if (event.key.code == sf::Keyboard::Up)
+						key.keyup1 = true;
+					if (event.key.code == sf::Keyboard::S)
+						key.keydown1 = true;
+					if (event.key.code == sf::Keyboard::Down)
+						key.keydown2 = true;
+					if (event.key.code == sf::Keyboard::Q)
+						key.keyleft1 = true;
+					if (event.key.code == sf::Keyboard::Left)
+						key.keyleft2 = true;
+					if (event.key.code == sf::Keyboard::D)
+						key.keyright1 = true;
+					if (event.key.code == sf::Keyboard::Right)
+						key.keyright2 = true;
+					if (event.key.code == sf::Keyboard::Z)
+						key.keyjump1 = true;
+					if (event.key.code == sf::Keyboard::Up)
+						key.keyjump2 = true;
+					if (event.key.code == sf::Keyboard::F)
+						key.keyfire1 = true;
+					if (event.key.code == sf::Keyboard::RControl)
+						key.keyfire2 = true;
+				}
+				else if (event.key.code == sf::Keyboard::R)
+				{
+					player1.relife();
+					player2.relife();
+					bullet->del();
+					end = false;
+				}
+			}
+			if (event.type == sf::Event::KeyReleased)
+			{
+				if (!end)
+				{
+					if (event.key.code == sf::Keyboard::Z)
+						key.keyup1 = false;
+					if (event.key.code == sf::Keyboard::Up)
+						key.keyup1 = false;
+					if (event.key.code == sf::Keyboard::S)
+						key.keydown1 = false;
+					if (event.key.code == sf::Keyboard::Down)
+						key.keydown2 = false;
+					if (event.key.code == sf::Keyboard::Q)
+						key.keyleft1 = false;
+					if (event.key.code == sf::Keyboard::Left)
+						key.keyleft2 = false;
+					if (event.key.code == sf::Keyboard::D)
+						key.keyright1 = false;
+					if (event.key.code == sf::Keyboard::Right)
+						key.keyright2 = false;
+				}
 			}
 		}
-		player1.update(key);
-		player2.update(key);
+		if (key.keyfire1)
+			bullet->add(1, player1, &onde1);
+		if (key.keyfire2)
+			bullet->add(2, player2, &onde2);
+		player1.update(key, dt.asSeconds(), plateform);
+		player2.update(key, dt.asSeconds(), plateform);
+		if (bullet->update(plateform, &player1, &player2, dt.asSeconds()))
+		{
+			if (player1.life <= 0)
+				sEnd.setTexture(end2);
+			if (player2.life <= 0)
+				sEnd.setTexture(end1);
+			bullet->del();
+			end = true;
+		}
 		window.clear(sf::Color(200, 200, 200));
 		window.draw(bg);
 		i = 0;
 		while (i < plateform.size())
 			window.draw(plateform[i++]);
+		bullet->draw(&window);
 		window.draw(*player1.getSprite());
 		window.draw(*player2.getSprite());
+		window.draw(scmd);
+		if (end)
+			window.draw(sEnd);
 		window.display();
 	}
 
